@@ -1,0 +1,98 @@
+#intro {
+  position: absolute;
+  top: 6rem; /* en dessous du header (ajuste si besoin) */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  text-align: center;
+  width: 100%;
+  color: var(--color-text);
+}
+
+#intro h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+
+#reservation {
+  position: fixed;
+  bottom: 6rem;
+  left: 50%;
+  width: max-content;
+  transform: translateX(-50%);
+  background: rgba(236, 236, 236, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+#reservation form {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(160px, auto)); /* 4 champs + 1 bouton */
+  gap: 1rem;
+  align-items: end;
+}
+
+#reservation label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--color-neutral-dark);
+}
+
+#reservation input,
+#reservation select {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-neutral-dark);
+  font-size: 0.9rem;
+  background: white;
+  min-width: 8rem;
+}
+
+#reservation .btn-inline {
+  height: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: var(--color-secondary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.3s ease;
+  align-self: end;
+}
+.menu-background {
+  background: url("../../assets/menu/restaurant.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 2rem;
+  color: var(--color-text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #reservation {
+    position: static;
+    margin: 2rem auto;
+    width: 90%;
+    padding: 1rem;
+  }
+
+  #reservation form {
+    grid-template-columns: 1fr;
+  }
+
+  #reservation .btn-inline {
+    width: 100%;
+    text-align: center;
+  }
+}
+

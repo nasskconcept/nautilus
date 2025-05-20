@@ -1,0 +1,54 @@
+/* base.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #2C3E50;
+  --color-secondary: #4A90E2;
+  --color-accent: #F5E9C7;
+  --color-neutral-dark: #36454F;
+  --color-neutral-light: #ECECEC;
+  --color-text: #FFFFFF;
+
+  --gap: 1rem;
+  --radius: 0.5rem;
+  --font-accent: 'Playfair Display', serif;
+}
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  font-size: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-accent);
+  color: var(--color-text);
+  margin-bottom: 0.5em;
+}
+main {
+  flex: 1 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.contact-background {
+  background: url("../assets/maîtreHotel.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+footer {
+  flex-shrink: 0;
+}

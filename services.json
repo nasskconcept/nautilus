@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Spa Marée Montante",
+    "description": "Hammam salin, massages aux algues, bain nordique.",
+    "icon": "icon-spa"
+  },
+  {
+    "id": 2,
+    "name": "Plongée VR",
+    "description": "Expérience virtuelle 360° des fonds marins.",
+    "icon": "icon-vr"
+  },
+  {
+    "id": 3,
+    "name": "Salle de sport Nautilus Fit",
+    "description": "Équipements modernes avec vue sur l’océan virtuel.",
+    "icon": "icon-fitness"
+  },
+  {
+    "id": 4,
+    "name": "Club Enfants \"Petits Explorateurs\"",
+    "description": "Animations marines, chasse au trésor, ateliers créatifs.",
+    "icon": "icon-kids"
+  },
+  {
+    "id": 5,
+    "name": "Bar Abyssal",
+    "description": "Cocktails phosphorescents et ambiance lounge sous-marine.",
+    "icon": "icon-bar"
+  },
+  {
+    "id": 6,
+    "name": "Boutique de souvenirs",
+    "description": "Objets artisanaux, bijoux coquillage et créations locales.",
+    "icon": "icon-shop"
+  },
+  {
+    "id": 7,
+    "name": "Service de conciergerie",
+    "description": "Organisation d’activités, réservations, assistance personnalisée.",
+    "icon": "icon-conciergerie"
+  },
+  {
+    "id": 8,
+    "name": "Salle de cinéma aquatique",
+    "description": "Projection de films marins dans une salle immersive.",
+    "icon": "icon-cinema"
+  },
+  {
+    "id": 9,
+    "name": "Navette sous-marine",
+    "description": "Transport immersif entre le port et l’hôtel.",
+    "icon": "icon-boat"
+  },
+  {
+    "id": 10,
+    "name": "Centre de bien-être Méduse",
+    "description": "Soins du visage, chromothérapie et relaxation sensorielle.",
+    "icon": "icon-wellness"
+  }
+]

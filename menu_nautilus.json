@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Tartare Océanique",
+    "category": "Entrée",
+    "description": "Thon frais, citron vert, herbes de mer.",
+    "price": 18,
+    "image": "assets/menu/entrée2.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Filet de Loup",
+    "category": "Plat",
+    "description": "Poisson du jour, émulsion d’algues.",
+    "price": 32,
+    "image": "assets/menu/plat1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Velouté de Corail",
+    "category": "Entrée",
+    "description": "Soupe onctueuse aux crustacés et éclats de corail.",
+    "price": 14,
+    "image": "assets/menu/entrée1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Risotto des Profondeurs",
+    "category": "Plat",
+    "description": "Risotto crémeux aux encornets et à l'encre de seiche.",
+    "price": 28,
+    "image": "assets/menu/plat2.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Burger Neptune",
+    "category": "Plat",
+    "description": "Steak de saumon, pain aux algues, sauce wasabi-mayo.",
+    "price": 26,
+    "image": "assets/menu/plat3.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Délice Abyssal",
+    "category": "Dessert",
+    "description": "Mousse chocolat noir, cœur fondant à la menthe marine.",
+    "price": 12,
+    "image": "assets/menu/dessert1.PNG"
+  },
+  {
+    "id": 7,
+    "name": "Perle Sucrée",
+    "category": "Dessert",
+    "description": "Sphère de coco givrée, coulis de fruit de la passion.",
+    "price": 13,
+    "image": "assets/menu/dessert.jpg"
+  }
+]
