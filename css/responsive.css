@@ -1,22 +1,133 @@
-/* responsive.css */
+/* ===== RESPONSIVE.CSS ===== */
+/* ===== logo ===== */
+@media (max-width: 600px) {
+  .logo img {
+    max-height: 3.5rem;
+  }
+}
+/* ===== RESPONSIVE reservation ===== */
+@media (max-width: 768px) {
+  #reservation {
+    position: static;
+    margin: 2rem auto;
+    width: 90%;
+    padding: 1rem;
+  }
+
+  #reservation form {
+    grid-template-columns: 1fr;
+  }
+
+  #reservation .btn-inline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ===== NAVIGATION RESPONSIVE ===== */
 @media (max-width: 48rem) {
-  .hamburger { display: block; }
+  .hamburger {
+    display: block;
+    z-index: 1100;
+  }
+
   nav ul {
     flex-direction: column;
     position: absolute;
-    right: 5%;
-    background: var(--color-bg);
+    top: 100%;
+    right: 2rem;
+    background: var(--color-bg); /* fond clair */
     width: 14rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    top: 100%;
+    border-radius: var(--radius);
+    padding: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
   }
+
   nav ul.open {
     transform: translateX(0);
   }
+
+  nav a {
+    width: 100%;
+    text-align: left;
+    margin: 0.25rem 0;
+    background: var(--color-secondary); /* conserver le style bleu bouton */
+    color: white;
+  }
+
+  nav a:hover {
+    background: var(--color-hover);
+    color: var(--color-primary);
+  }
+
   #contact,
   #reservation {
     margin: 1rem;
     padding: 1.5rem;
+  }
+}
+
+/* ===== ANIMATION FADE IN ===== */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MENU ITEM MOBILE ===== */
+@media (max-width: 600px) {
+  .menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu-item img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .menu-info h4 small {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.3rem;
+  }
+}
+/* ===== Points de rupture pour mobile/tablette ===== */
+@media (max-width: 900px) {
+  .rooms-grid {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .rooms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajustement carte pour profiter de la largeur */
+.room-card {
+  width: 100%;       /* Remplit toute la cellule */
+  max-width: none;   /* On enlève l’ancienne limite */
+}
+/* ===== CONTACT ===== */
+@media (max-width: 48rem) {
+  #contact {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  #contact button[type="submit"] {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 48rem) {
+  .map-wrapper {
+    height: 200px;
   }
 }

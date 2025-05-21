@@ -8,20 +8,22 @@
 }
 
 :root {
-  --color-bg: #2C3E50;
-  --color-secondary: #4A90E2;
-  --color-accent: #F5E9C7;
-  --color-neutral-dark: #36454F;
-  --color-neutral-light: #ECECEC;
-  --color-text: #FFFFFF;
+  --color-primary: #1A3A5F;
+  --color-secondary: #5A86A8;
+  --color-bg: #F8FAFC;
+  --color-text: #1A3A5F;
+  --color-hover: #D1E3F0;
+  --color-border: #B0C9D9;
 
-  --gap: 1rem;
   --radius: 0.5rem;
+  --gap: 1rem;
   --font-accent: 'Playfair Display', serif;
 }
+
 html, body {
   height: 100%;
 }
+
 body {
   font-family: 'Montserrat', sans-serif;
   background: var(--color-bg);
@@ -32,23 +34,32 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-}
-h1, h2, h3, h4, h5 {
-  font-family: var(--font-accent);
-  color: var(--color-text);
-  margin-bottom: 0.5em;
-}
-main {
-  flex: 1 0 auto;
-  position: relative;
-  z-index: 1;
-}
-.contact-background {
-  background: url("../assets/maîtreHotel.jpg") no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
+  padding-top: 80px;
 }
 
-footer {
+/* === TYPOGRAPHIE === */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-accent);
+  margin-bottom: 0.5em;
+}
+main,
+section {
+  text-align: center;
+}
+.page-title {
+  font-family: var(--font-accent);
+  font-size: 2rem;
+  margin: 2rem auto 1.5rem auto;
+  display: inline-block;
+  width: fit-content;
+  padding: 0.5em 1em;
+  background: rgba(90, 134, 168, 0.8);
+  color: #fff;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+/* === CONTENU PRINCIPAL === */
+main { 
   flex-shrink: 0;
 }

@@ -3,128 +3,144 @@
     "id": 1,
     "name": "Bulle d'Azur",
     "capacity": 2,
+    "type": "standard",
     "price": 220,
     "description": "Chambre ronde, paroi vitrée, vue plongeante sur le décor marin.",
-    "image": "assets/chambre/room1.jpg"
+    "image": "assets/chambre/roomDome.png"
   },
   {
     "id": 2,
     "name": "Suite Corail",
     "capacity": 4,
+    "type": "familiale",
     "price": 380,
     "description": "Grande suite familiale décor corail et bois flotté.",
-    "image": "assets/chambre/room2.jpg"
+    "image": "assets/chambre/roomCorail.png"
   },
   {
     "id": 3,
     "name": "Bulle de Corail",
     "capacity": 2,
+    "type": "standard",
     "price": 150,
-    "description": "Chambre lumineuse décorée de teintes corail et de plantes aquatiques, parfaite pour un séjour paisible.",
-     "image": "assets/chambre/room3.jpg"
+    "description": "Chambre lumineuse décorée de teintes corail et de plantes aquatiques.",
+    "image": "assets/chambre/roomBulle.png"
   },
   {
     "id": 4,
     "name": "Cabine du Capitaine Nemo",
     "capacity": 1,
+    "type": "standard",
     "price": 120,
-    "description": "Ambiance boisée et instruments de navigation vintage, pour les voyageurs solitaires.",
-     "image": "assets/chambre/room4.jpg"
+    "description": "Ambiance boisée et instruments de navigation vintage.",
+    "image": "assets/chambre/roomNemo.png"
   },
   {
     "id": 5,
     "name": "Lumière des Abysses",
     "capacity": 2,
+    "type": "standard",
     "price": 170,
-    "description": "Chambre design éclairée par des néons bleus imitant la bioluminescence des profondeurs.",
-     "image": "assets/chambre/room5.jpg"
+    "description": "Chambre design éclairée par des néons bleus imitant la bioluminescence.",
+    "image": "assets/chambre/roomNeon.png"
   },
   {
     "id": 6,
     "name": "Ancre Sacrée",
     "capacity": 2,
+    "type": "standard",
     "price": 160,
-    "description": "Un décor d’acier, d’ancre et de cordages marins pour une ambiance rustique chic.",
-     "image": "assets/chambre/room6.jpg"
+    "description": "Un décor d’acier, d’ancre et de cordages marins.",
+    "image": "assets/chambre/roomAncre.png"
   },
   {
     "id": 7,
     "name": "Cité d’Atlantis",
     "capacity": 3,
+    "type": "suite",
     "price": 210,
-    "description": "Une suite décorée de colonnes antiques et fresques sous-marines pour une immersion antique.",
-     "image": "assets/chambre/room7.jpg"
+    "description": "Décorée de colonnes antiques et fresques sous-marines.",
+    "image": "assets/chambre/roomAtlantis.png"
   },
   {
     "id": 8,
     "name": "Saphir Océanique",
     "capacity": 2,
+    "type": "standard",
     "price": 190,
-    "description": "Chambre élégante décorée de tons bleus profonds et de mobilier en verre.",
-     "image": "assets/chambre/room8.jpg"
+    "description": "Tons bleus profonds et mobilier en verre.",
+    "image": "assets/chambre/roomOceanique.png"
   },
   {
     "id": 9,
     "name": "Refuge de la Sirène",
     "capacity": 2,
+    "type": "standard",
     "price": 175,
-    "description": "Un décor féerique et mystérieux, inspiré des légendes de sirènes.",
-     "image": "assets/chambre/room9.jpg"
+    "description": "Décor féerique et mystérieux, inspiré des légendes.",
+    "image": "assets/chambre/roomSirene.png"
   },
   {
     "id": 10,
     "name": "Tunnel Aquatique",
     "capacity": 4,
+    "type": "standard",
     "price": 250,
-    "description": "Chambre familiale traversée par un tunnel en verre pour observer la faune marine.",
-     "image": "assets/chambre/room10.jpg"
+    "description": "Chambre traversée par un tunnel en verre.",
+    "image": "assets/chambre/roomTunnel.png"
   },
   {
     "id": 11,
     "name": "Écume du Matin",
     "capacity": 1,
+    "type": "standard",
     "price": 110,
-    "description": "Petite chambre cosy avec sons relaxants des vagues en fond sonore.",
-     "image": "assets/chambre/room11.jpg"
+    "description": "Petite chambre cosy avec sons des vagues.",
+    "image": "assets/chambre/roomEcume.png"
   },
   {
     "id": 12,
     "name": "La Capsule Explorer",
     "capacity": 2,
+    "type": "standard",
     "price": 160,
-    "description": "Chambre futuriste avec écrans interactifs et commandes inspirées de submersibles.",
-     "image": "assets/chambre/room12.jpg"
+    "description": "Écrans interactifs inspirés des submersibles.",
+    "image": "assets/chambre/roomCapsule.png"
   },
   {
     "id": 13,
     "name": "Plancton & Lumières",
     "capacity": 2,
+    "type": "standard",
     "price": 165,
-    "description": "Effets lumineux mouvants au plafond, inspirés du ballet des planctons fluorescents.",
-     "image": "assets/chambre/room13.jpg"
+    "description": "Effets lumineux inspirés des planctons fluorescents.",
+    "image": "assets/chambre/roomPlancton.png"
   },
   {
     "id": 14,
     "name": "Vitraux Marins",
     "capacity": 3,
+    "type": "suite",
     "price": 200,
-    "description": "Suite décorée de vitraux colorés projetant des reflets océaniques dans la pièce.",
-    "image": "assets/chambre/room14.jpg"
+    "description": "Suite avec vitraux colorés et reflets océaniques.",
+    "image": "assets/chambre/suiteVitraux.png"
   },
   {
     "id": 15,
     "name": "Dôme de Verre",
     "capacity": 2,
+    "type": "standard",
     "price": 230,
-    "description": "Chambre sous un dôme transparent pour une vue directe sur l’environnement sous-marin.",
-    "image": "assets/chambre/room15.PNG"
+    "description": "Dôme transparent avec vue sous-marine.",
+    "image": "assets/chambre/roomDome.png"
   },
   {
     "id": 16,
     "name": "L'Œil de Poséidon",
     "capacity": 2,
+    "type": "standard",
     "price": 185,
-    "description": "Design mythologique, symboles antiques et ambiance royale sous-marine.",
-    "image": "assets/chambre/room16.jpg"
+    "description": "Ambiance royale et symboles antiques.",
+    "image": "assets/chambre/roomPoseidon.png"
   }
 ]

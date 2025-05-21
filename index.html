@@ -12,7 +12,7 @@
     <title>Hôtel Nautilus - Accueil</title>
   </head>
 
-  <body>
+  <body class="home">
     <header>
       <figure class="logo">
         <img src="assets/NAUTILUS.jpg" alt="Hôtel Nautilus" />
@@ -32,7 +32,7 @@
     </header>
 
     <figure class="bloc">
-      <video id="bg-video" autoplay muted loop src="assets/Confort1.mp4"></video>
+      <video id="bg-video" autoplay muted loop src="assets/Confort2.mp4"></video>
     </figure>
 
     <main>
@@ -41,10 +41,11 @@
       </section>
 
       <section id="reservation">
-        <form
-          id="booking-form"
-          onsubmit="event.preventDefault(); window.location.href='hebergement.html';"
-        >
+      <form
+  id="booking-form"
+  action="hebergement.html"
+  method="GET"
+>
           <label>
             Arrivée
             <input type="date" name="checkin" required />
@@ -66,7 +67,7 @@
           </label>
           <label>
             Type de chambre
-            <select name="room-type">
+            <select name="roomType">
               <option value="standard">Chambre Standard</option>
               <option value="suite">Suite Prestige</option>
               <option value="familiale">Suite Familiale</option>
@@ -80,23 +81,29 @@
       </section>
     </main>
 
-    <footer>
-      <p>
-        © 2025 Hôtel Nautilus NASSIMA MEHDI & MOHAMED ALI Adil – Tous droits
-        réservés
-      </p>
-      <ul class="social">
-        <li>
-          <a href="#"><i class="icon-facebook" aria-hidden="true"></i><span class="sr-only">Facebook</span></a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span></a>
-        </li>
-      </ul>
-    </footer>
+<footer>
+  <p>© 2025 Hôtel Nautilus NASSIMA MEHDI & MOHAMED ALI Adil – Tous droits réservés</p>
+  <ul class="social">
+    <li>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener">
+        <i class="icon-facebook" aria-hidden="true"></i>
+        <span class="sr-only">Facebook</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">
+        <i class="icon-instagram" aria-hidden="true"></i>
+        <span class="sr-only">Instagram</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.twitter.com" target="_blank" rel="noopener">
+        <i class="icon-twitter" aria-hidden="true"></i>
+        <span class="sr-only">Twitter</span>
+      </a>
+    </li>
+  </ul>
+</footer>
 
     <script src="script.js"></script>
   </body>

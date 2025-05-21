@@ -1,0 +1,59 @@
+/* ===== SERVICES ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--gap);
+  padding: 2rem 1rem;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(26, 58, 95, 0.8); /* bleu profond semi-opaque */
+  border-radius: var(--radius);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  color: white; /* contraste sur fond sombre */
+}
+
+/* Image en haut de la carte */
+.service-card .service-img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  margin-bottom: 0.75rem;
+}
+
+.service-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-secondary);
+}
+
+/* Si une image précède l’icône, on ajuste légèrement l’icône */
+.service-card .service-img + i {
+  margin-top: 0.25rem;
+  font-size: 1.5rem;
+}
+
+.service-card h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.2rem;
+  color: white; /* texte blanc pour lisibilité */
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0.25rem 0 0;
+  color: white;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background: rgba(26, 58, 95, 1); /* plein bleu au survol */
+}

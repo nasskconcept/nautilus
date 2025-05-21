@@ -3,60 +3,80 @@
     "id": 1,
     "name": "Spa Marée Montante",
     "description": "Hammam salin, massages aux algues, bain nordique.",
-    "icon": "icon-spa"
+    "icon": "icon-spa",
+        "image": "assets/services/spaMarin.jpg"
+
   },
   {
     "id": 2,
     "name": "Plongée VR",
     "description": "Expérience virtuelle 360° des fonds marins.",
-    "icon": "icon-vr"
+    "icon": "icon-vr",
+        "image": "assets/services/plongéeVR.jpg"
+
   },
   {
     "id": 3,
     "name": "Salle de sport Nautilus Fit",
     "description": "Équipements modernes avec vue sur l’océan virtuel.",
-    "icon": "icon-fitness"
+    "icon": "icon-fitness",
+        "image": "assets/services/sportVirtuel.png"
+
   },
   {
     "id": 4,
     "name": "Club Enfants \"Petits Explorateurs\"",
     "description": "Animations marines, chasse au trésor, ateliers créatifs.",
-    "icon": "icon-kids"
+    "icon": "icon-kids",
+        "image": "assets/services/kidsClub.jpg"
+
   },
   {
     "id": 5,
     "name": "Bar Abyssal",
     "description": "Cocktails phosphorescents et ambiance lounge sous-marine.",
-    "icon": "icon-bar"
+    "icon": "icon-bar",
+        "image": "assets/services/bar1.jpg"
+
   },
   {
     "id": 6,
     "name": "Boutique de souvenirs",
     "description": "Objets artisanaux, bijoux coquillage et créations locales.",
-    "icon": "icon-shop"
+    "icon": "icon-shop",
+        "image": "assets/services/shop.jpg"
+
   },
   {
     "id": 7,
     "name": "Service de conciergerie",
     "description": "Organisation d’activités, réservations, assistance personnalisée.",
-    "icon": "icon-conciergerie"
+    "icon": "icon-conciergerie",
+        "image": "assets/services/Concierge.jpg"
+
   },
   {
     "id": 8,
     "name": "Salle de cinéma aquatique",
     "description": "Projection de films marins dans une salle immersive.",
-    "icon": "icon-cinema"
+    "icon": "icon-cinema",
+        "image": "assets/services/cinema.png"
+
   },
   {
     "id": 9,
     "name": "Navette sous-marine",
     "description": "Transport immersif entre le port et l’hôtel.",
-    "icon": "icon-boat"
+    "icon": "icon-boat",
+        "image": "assets/services/navette.png"
+
   },
   {
     "id": 10,
     "name": "Centre de bien-être Méduse",
     "description": "Soins du visage, chromothérapie et relaxation sensorielle.",
-    "icon": "icon-wellness"
+    "icon": "icon-wellness",
+        "image": "assets/services/bienEtre.png"
+
   }
 ]

@@ -1,6 +1,8 @@
+/* ===== INTRODUCTION ===== */
+
 #intro {
   position: absolute;
-  top: 6rem; /* en dessous du header (ajuste si besoin) */
+  top: 3rem;   /* réduit de 6rem à 5rem pour remonter le titre */
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
@@ -9,21 +11,24 @@
   color: var(--color-text);
 }
 
+
 #intro h1 {
   font-size: 3rem;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* lisibilité sur fond vidéo */
   padding: 1rem;
+  font-family: var(--font-accent);
 }
 
+/* ===== RÉSERVATION FIXE ===== */
 #reservation {
   position: fixed;
   bottom: 6rem;
   left: 50%;
-  width: max-content;
   transform: translateX(-50%);
-  background: rgba(236, 236, 236, 0.6);
+  width: max-content;
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(180, 200, 210, 0.4);
   border-radius: 1rem;
   padding: 1rem 2rem;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.3);
@@ -32,7 +37,7 @@
 
 #reservation form {
   display: grid;
-  grid-template-columns: repeat(5, minmax(160px, auto)); /* 4 champs + 1 bouton */
+  grid-template-columns: repeat(5, minmax(160px, auto));
   gap: 1rem;
   align-items: end;
 }
@@ -42,33 +47,42 @@
   flex-direction: column;
   font-weight: bold;
   font-size: 0.9rem;
-  color: var(--color-neutral-dark);
+  color: var(--color-primary);
 }
 
 #reservation input,
 #reservation select {
   padding: 0.5rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--color-neutral-dark);
+  border: 1px solid var(--color-border);
   font-size: 0.9rem;
   background: white;
   min-width: 8rem;
+  color: var(--color-primary);
 }
 
+/* ===== BOUTON ===== */
 #reservation .btn-inline {
   height: 100%;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: bold;
   background: var(--color-secondary);
-  color: var(--color-text);
+  color: white;
   border: none;
   border-radius: 0.75rem;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.3s ease, transform 0.3s ease;
   align-self: end;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
+
+#reservation .btn-inline:hover {
+  background: var(--color-hover);
+  color: var(--color-primary);
+}
+
+/* ===== FOND MENU (page restauration) ===== */
 .menu-background {
   background: url("../../assets/menu/restaurant.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -77,22 +91,4 @@
   color: var(--color-text);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  #reservation {
-    position: static;
-    margin: 2rem auto;
-    width: 90%;
-    padding: 1rem;
-  }
-
-  #reservation form {
-    grid-template-columns: 1fr;
-  }
-
-  #reservation .btn-inline {
-    width: 100%;
-    text-align: center;
-  }
-}
 
