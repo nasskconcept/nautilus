@@ -22,18 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const createRoomCard = (room) => `
-  <article class="room-card">
-    <h3>${room.name}</h3>
-    <div class="guests">👤 ${room.capacity} pers.</div>
-    <img src="${room.image}" alt="${room.name}">
-    <div class="description">${room.description}</div>
-    <div class="price">€${room.price}/nuit</div>
-    <button class="btn-reserver" onclick="window.location.href='contact.html?room=${encodeURIComponent(
-      room.name
-    )}'">
-      Réserver 
-    </button>
-  </article>`;
+    <article class="room-card">
+      <img src="${room.image}" alt="${room.name}" class="room-img" />
+      <h3>${room.name}</h3>
+      <div class="guests">👤 ${room.capacity} personnes</div>
+      <div class="description">${room.description}</div>
+      <div class="price">€${room.price}/nuit</div>
+      <button class="btn-reserver" data-room="${encodeURIComponent(
+        room.name
+      )}">Réserver</button>
+    </article>
+  `;
 
   const createMenuItem = (item) => `
     <article class="menu-item">
@@ -105,12 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
         servicesContainer.innerHTML = services
           .map(
             (s) => `
-          <div class="service-card">
-            <img src="${s.image}" alt="${s.name}" class="service-img" />
-            <i class="${s.icon}"></i>
-            <h3>${s.name}</h3>
-            <p>${s.description}</p>
-          </div>`
+              <div class="service-card">
+                <img src="${s.image}" alt="${s.name}" class="service-img" />
+                <i class="${s.icon}"></i>
+                <h3>${s.name}</h3>
+                <p>${s.description}</p>
+              </div>`
           )
           .join("");
       })
@@ -123,6 +122,59 @@ document.addEventListener("DOMContentLoaded", () => {
   const celebContainer = document.querySelector("#celeb-list");
   if (celebContainer) {
     showLoading(celebContainer);
+
+    const fakeDescriptions = {
+      "alain delon":
+        "Connu pour son élégance intemporelle, Alain Delon a profité de son séjour pour méditer dans notre Spa Nautilus et écrire un nouveau scénario.",
+      "vincent cassel":
+        "Toujours aussi dynamique, Vincent Cassel a organisé un tournage surprise dans la Suite Bulle d’Azur et initié le personnel aux claquettes.",
+      "roman polanski":
+        "Fasciné par la décoration marine, Roman Polanski a proposé de tourner une scène de film dans le restaurant sous-marin.",
+      "jean-paul goude":
+        "Inspiré par l’architecture, Jean-Paul Goude a esquissé une nouvelle fresque pour le hall d’entrée de l’hôtel.",
+      "martin solveig":
+        "Le célèbre DJ a improvisé une soirée électro sur le toit du Nautilus, rassemblant tous les clients jusqu’au petit matin.",
+      default:
+        "Invité spécial du Nautilus, cette célébrité a partagé un moment inoubliable lors d’un événement privé.",
+    };
+
+    const translateOccupation = (occ) => {
+      const dict = {
+        actor: "Acteur",
+        actress: "Actrice",
+        director: "Réalisateur",
+        "film director": "Réalisateur",
+        film_director: "Réalisateur",
+        producer: "Producteur",
+        film_producer: "Producteur",
+        screenwriter: "Scénariste",
+        singer: "Chanteur",
+        musician: "Musicien",
+        model: "Mannequin",
+        dj: "DJ",
+        composer: "Compositeur",
+        writer: "Écrivain",
+        photographer: "Photographe",
+        painter: "Peintre",
+        artist: "Artiste",
+        dancer: "Danseur",
+        comedian: "Humoriste",
+        voice_actor: "Doubleur voix",
+        soldier: "Militaire",
+        television_producer: "Producteur TV",
+      };
+      if (Array.isArray(occ)) {
+        return occ
+          .map(
+            (o) =>
+              dict[o.toLowerCase().replace(/ /g, "_")] || o.replace(/_/g, " ")
+          )
+          .join(", ");
+      }
+      const key = occ.toLowerCase().replace(/ /g, "_");
+      return dict[key] || occ.replace(/_/g, " ");
+    };
+
     fetch(PATHS.celebrities, {
       headers: { "X-Api-Key": API_KEY },
     })
@@ -135,16 +187,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const key = name.toLowerCase();
             const imgSrc =
               PATHS.celebImages[key] || "assets/celebrities/default.jpg";
-            const roles = c.occupation ? c.occupation.join(", ") : "Artiste";
-            const anecdote = `En 2023, ${name} a séjourné dans notre Suite Corail pour un événement privé.`;
+            const roles = c.occupation
+              ? translateOccupation(c.occupation)
+              : "Artiste";
+            const anecdote =
+              fakeDescriptions[key] || fakeDescriptions["default"];
             return `
-            <div class="celeb-card">
-              <img src="${imgSrc}" alt="${name}" class="celeb-photo"/>
-              <h4>${name} <small>(${roles}, ${
-              c.country || "France"
-            })</small></h4>
-              <p>${anecdote}</p>
-            </div>`;
+              <div class="celeb-card">
+                <img src="${imgSrc}" alt="${name}" class="celeb-photo"/>
+                <h4>${name}</h4>
+                <p class="metier"><b>Métier :</b> ${roles}</p>
+                <p class="desc">${anecdote}</p>
+              </div>`;
           })
           .join("");
       })
@@ -153,7 +207,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // === MENU BURGER ===
+  // === REDIRECTIONS BOUTONS (RÉSERVATION CHAMBRE & TABLE) ===
+  document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("btn-reserver")) {
+      const room = event.target.getAttribute("data-room");
+      window.location.href = `contact.html?room=${room}`;
+    }
+    if (event.target.classList.contains("btn-reservation-table")) {
+      window.location.href = "contact.html?table=1";
+    }
+  });
+
+  // === NAVIGATION BURGER ===
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector("nav ul");
   if (hamburger && navMenu) {
@@ -212,5 +277,69 @@ document.addEventListener("DOMContentLoaded", () => {
       .bindPopup(
         "<strong>Hôtel Nautilus</strong><br>Bienvenue dans les profondeurs."
       );
+  }
+
+  // === PRÉ-REMPLISSAGE RÉSERVATION TABLE (PAGE CONTACT) ===
+  const params = new URLSearchParams(window.location.search);
+  if (params.has("table")) {
+    const now = new Date();
+    const hour = now.getHours();
+    const salutation = hour >= 18 ? "Bonsoir" : "Bonjour";
+    const messageField = document.querySelector('textarea[name="message"]');
+    if (messageField) {
+      messageField.value = `${salutation},\n\nNous souhaiterions réserver une table au nom de [votre nom] pour [nombre de personnes] personnes.\n\nMerci !`;
+    }
+  }
+  // === PRÉ-REMPLISSAGE RÉSERVATION CHAMBRE (PAGE CONTACT) ===
+  if (params.has("room")) {
+    const roomName = decodeURIComponent(params.get("room"));
+    const now = new Date();
+    const hour = now.getHours();
+    const salutation = hour >= 18 ? "Bonsoir" : "Bonjour";
+    const messageField = document.querySelector('textarea[name="message"]');
+    if (messageField) {
+      messageField.value =
+        `${salutation},\n\n` +
+        `Nous souhaiterions réserver la chambre « ${roomName} ».\n\n` +
+        `Merci beaucoup !`;
+    }
+  }
+
+  // === MODALE DE REMERCIEMENT POUR LE FORMULAIRE CONTACT ===
+  const contactForm = document.querySelector("#contact form");
+  const modalThankyou = document.getElementById("modal-thankyou");
+  const closeModalBtn = document.querySelector(".modal-thankyou .close-modal");
+
+  if (contactForm && modalThankyou) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+
+      fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            modalThankyou.classList.add("active");
+            contactForm.reset();
+          } else {
+            alert("Erreur lors de l'envoi. Veuillez réessayer.");
+          }
+        })
+        .catch(() => {
+          alert("Erreur réseau, veuillez réessayer.");
+        });
+    });
+
+    closeModalBtn.addEventListener("click", () => {
+      modalThankyou.classList.remove("active");
+    });
+    modalThankyou.addEventListener("click", (e) => {
+      if (e.target === modalThankyou) modalThankyou.classList.remove("active");
+    });
   }
 });

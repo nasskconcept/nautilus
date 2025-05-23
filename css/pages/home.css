@@ -92,3 +92,46 @@
 }
 
 
+.btn-inline {
+  display: block;
+  width: 100%;            /* Prend toute la largeur possible du conteneur */
+  min-width: 240px;       /* Minimum pour être lisible, augmente si tu veux */
+  max-width: 380px;       /* Largeur max pour éviter qu'il ne devienne trop grand sur grand écran */
+  margin: 0 auto;         /* Centre le bouton si son parent n'est pas déjà en flex/center */
+  padding: 1.1rem 0;      /* Hauteur du bouton, à ajuster à ton goût */
+  font-size: 1.15rem;
+  font-family: var(--font-accent); /* Pour garder la cohérence */
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  color: #fff;
+  border: none;
+  border-radius: 1.4rem;
+  box-shadow: 0 2px 18px rgba(20,35,60,0.11);
+  letter-spacing: 0.03em;
+  text-align: center;
+  transition: background 0.22s, color 0.22s, transform 0.22s;
+}
+
+.btn-inline:hover,
+.btn-inline:focus {
+  background: var(--color-hover);
+  color: var(--color-primary);
+  transform: scale(1.03);
+  outline: none;
+}
+#reservation .btn-inline {
+  padding: 0.75rem 2.7rem; /* Augmente la largeur visuelle */
+  min-width: 250px;        /* Minimum lisible, adapte selon ton goût */
+  max-width: 100%;         /* N'empêche pas de grossir */
+  width: auto;             /* Prend juste ce qu'il faut */
+  margin: 0;               /* Pas de margin auto sinon ça décale */
+  justify-self: end;       /* Colle à droite dans la grille */
+}
+/* === Override bouton réservation (page Accueil) === */
+body.home #reservation .btn-inline {
+  width: auto;        /* s’ajuste au texte + padding */
+  min-width: 0;       /* pas de largeur minimum imposée */
+  max-width: none;    /* pas de limite supérieure */
+  white-space: nowrap;/* texte toujours sur une seule ligne */
+  padding: 0.75rem 2rem; /* confort horizontal autour du texte */
+}

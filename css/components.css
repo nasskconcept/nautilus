@@ -59,6 +59,35 @@ button,
   font-size: 1.5rem;
   background: none;
 }
+.btn-reserver,
+#contact button[type="submit"] {
+  display: block;
+  margin: 1.2rem auto 0 auto;
+  min-width: 180px;
+  width: 60%;
+  max-width: 340px;
+  padding: 0.9rem 0;
+  font-size: 1.1rem;
+  font-family: var(--font-accent);
+  font-weight: bold;
+  border-radius: var(--radius);
+  background: var(--color-secondary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, box-shadow 0.2s, transform 0.16s;
+  box-shadow: 0 2px 16px rgba(26, 58, 95, 0.12);
+  letter-spacing: 0.02em;
+}
+
+.btn-reserver:hover,
+#contact button[type="submit"]:hover {
+  background: var(--color-hover);
+  color: var(--color-primary);
+  box-shadow: 0 4px 28px rgba(26, 58, 95, 0.23);
+  transform: scale(1.035) rotate(-2deg);
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: rgba(26, 58, 95, 0.7);

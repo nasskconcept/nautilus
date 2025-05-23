@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hôtel Nautilus - Contact</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/pages/contacts.css"> 
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <title>Hôtel Nautilus - Contact</title>
 </head>
 
 <body class="contact-background">
@@ -38,11 +37,17 @@
   <main>
     <section id="contact">
       <h2 class="page-title">Contactez-nous</h2>
-      <form action="#" method="post">
-        <label>Nom<input type="text" name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
-        <label>Message<textarea name="message" rows="5"></textarea></label>
-        <button type="submit">Envoyer</button>
+      <form action="https://formspree.io/f/xpwdejgg" method="POST" autocomplete="off">
+        <label>Votre nom :
+          <input type="text" name="nom" required>
+        </label>
+        <label>Votre email :
+          <input type="email" name="email" required>
+        </label>
+        <label>Message :
+          <textarea name="message" required></textarea>
+        </label>
+        <button type="submit" class="btn-reserver">Envoyer</button>
       </form>
 
       <div class="info">
@@ -50,11 +55,20 @@
         <p>📞 +33 1 23 45 67 89</p>
       </div>
 
-  <figure class="map-wrapper" id="nautilus-map">
-  <figcaption class="map-caption">📍 Hôtel Nautilus — Anse de Poséidon, Méditerranée</figcaption>
-</figure>
+      <figure class="map-wrapper" id="nautilus-map">
+        <figcaption class="map-caption">📍 Hôtel Nautilus — Anse de Poséidon, Méditerranée</figcaption>
+      </figure>
     </section>
   </main>
+
+  <!-- Modale de remerciement -->
+  <div id="modal-thankyou" class="modal-thankyou" style="display:none;">
+    <div class="modal-content">
+      <h2>Merci !</h2>
+      <p>Votre message a bien été envoyé.<br>Nous vous répondrons au plus vite.</p>
+      <button class="btn-reserver close-modal">Fermer</button>
+    </div>
+  </div>
 
   <footer>
     <p>© 2025 Hôtel Nautilus NASSIMA MEHDI & MOHAMED ALI Adil – Tous droits réservés</p>
@@ -64,18 +78,8 @@
       <li><a href="https://www.twitter.com" target="_blank"><i class="icon-twitter"></i><span class="sr-only">Twitter</span></a></li>
     </ul>
   </footer>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const roomName = params.get("room");
-    const messageField = document.querySelector('textarea[name="message"]');
-
-    if (roomName && messageField) {
-      messageField.value = `Bonjour, je souhaite réserver la chambre "${roomName}".`;
-    }
-  });
-</script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

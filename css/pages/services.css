@@ -1,59 +1,98 @@
-/* ===== SERVICES ===== */
+/* ===== SERVICES (adapted from Hébergement) ===== */
+
+/* Container */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   padding: 2rem 1rem;
 }
 
+/* Card */
 .service-card {
-  position: relative;
-  overflow: hidden;
-  background: rgba(26, 58, 95, 0.8); /* bleu profond semi-opaque */
-  border-radius: var(--radius);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.3s ease, background 0.3s ease;
-  color: white; /* contraste sur fond sombre */
-}
-
-/* Image en haut de la carte */
-.service-card .service-img {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(90, 134, 168, 0.82); /* Bleu transparent */
+  color: white;
+  padding: 2rem 2rem 1.7rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.18);
   width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
-  margin-bottom: 0.75rem;
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 470px;
+  transition: transform 0.18s cubic-bezier(.25,.1,.25,1), background 0.25s;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-align: center;
 }
 
+/* Hover effect */
+.service-card:hover {
+  transform: translateY(-8px) scale(1.025);
+  background: rgba(90, 134, 168, 0.95);
+  box-shadow: 0 6px 32px rgba(26, 58, 95, 0.18);
+}
+
+/* Image at top */
+.service-card .service-img {
+  width: 100%;
+  max-width: 380px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 2px 16px rgba(20, 35, 60, 0.14);
+}
+
+/* Icon below image */
 .service-card i {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   color: var(--color-secondary);
 }
 
-/* Si une image précède l’icône, on ajuste légèrement l’icône */
-.service-card .service-img + i {
-  margin-top: 0.25rem;
-  font-size: 1.5rem;
-}
-
+/* Title */
 .service-card h3 {
-  margin: 0.5rem 0 0.25rem;
-  font-size: 1.2rem;
-  color: white; /* texte blanc pour lisibilité */
+  font-size: 1.42rem;
+  font-family: var(--font-accent);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
+/* Description */
 .service-card p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  margin: 0.25rem 0 0;
-  color: white;
+  font-size: 1.03rem;
+  line-height: 1.55;
+  margin-bottom: 1.1rem;
+  color: #f5f8fa;
+  min-height: 62px;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  background: rgba(26, 58, 95, 1); /* plein bleu au survol */
+/* Optional button (e.g. “En savoir plus”) */
+.service-card .btn-service {
+  display: block;
+  width: 78%;
+  margin: 0.8rem auto 0 auto;
+  padding: 1rem 0;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  font-size: 1.13rem;
+  cursor: pointer;
+  box-shadow: 0 2px 18px rgba(20, 35, 60, 0.13);
+  letter-spacing: 0.03em;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.service-card .btn-service:hover,
+.service-card .btn-service:focus {
+  background: var(--color-hover);
+  color: var(--color-primary);
+  transform: translateY(-3px) scale(1.04);
 }

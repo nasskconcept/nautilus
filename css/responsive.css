@@ -1,11 +1,11 @@
-/* ===== RESPONSIVE.CSS ===== */
-/* ===== logo ===== */
+/* ===== LOGO ===== */
 @media (max-width: 600px) {
   .logo img {
     max-height: 3.5rem;
   }
 }
-/* ===== RESPONSIVE reservation ===== */
+
+/* ===== RÉSERVATION ===== */
 @media (max-width: 768px) {
   #reservation {
     position: static;
@@ -24,48 +24,51 @@
   }
 }
 
-/* ===== NAVIGATION RESPONSIVE ===== */
-@media (max-width: 48rem) {
+/* ===== NAVIGATION BURGER UNIFORME CHIC ===== */
+@media (max-width: 900px) {
+  nav ul {
+    align-items: center;
+  }
+  nav a {
+    display: block;
+    min-width: 180px;
+    max-width: 220px;
+    width: 100%;
+    text-align: center;
+    margin: 0.4rem 0;
+    background: var(--color-secondary);
+    color: white;
+    border-radius: var(--radius);
+    box-sizing: border-box;
+    font-family: var(--font-accent);
+    font-weight: 500;
+    font-size: 1.07rem;
+    padding: 0.7rem 1rem;
+    transition: background 0.3s, color 0.3s;
+  }
+  nav a:hover, nav a:focus {
+    background: var(--color-hover);
+    color: var(--color-primary);
+  }
   .hamburger {
     display: block;
     z-index: 1100;
   }
-
   nav ul {
+    position: fixed;
+    top: 4.5rem;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    background: var(--color-bg);
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 2rem;
-    background: var(--color-bg); /* fond clair */
-    width: 14rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    border-radius: var(--radius);
-    padding: 1rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    padding: 2rem 1rem;
+    transform: translateY(-150%);
+    transition: transform 0.3s;
+    z-index: 9999;
   }
-
   nav ul.open {
-    transform: translateX(0);
-  }
-
-  nav a {
-    width: 100%;
-    text-align: left;
-    margin: 0.25rem 0;
-    background: var(--color-secondary); /* conserver le style bleu bouton */
-    color: white;
-  }
-
-  nav a:hover {
-    background: var(--color-hover);
-    color: var(--color-primary);
-  }
-
-  #contact,
-  #reservation {
-    margin: 1rem;
-    padding: 1.5rem;
+    transform: translateY(0);
   }
 }
 
@@ -83,51 +86,220 @@
     flex-direction: column;
     text-align: center;
   }
-
   .menu-item img {
     width: 80px;
     height: 80px;
   }
-
   .menu-info h4 small {
     display: block;
     margin-left: 0;
     margin-top: 0.3rem;
   }
 }
-/* ===== Points de rupture pour mobile/tablette ===== */
+
+/* ===== GRILLE DES CHAMBRES (TABLETTE & MOBILE) ===== */
 @media (max-width: 900px) {
   .rooms-grid {
     grid-template-columns: repeat(2, minmax(250px, 1fr));
   }
 }
-
 @media (max-width: 600px) {
   .rooms-grid {
     grid-template-columns: 1fr;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.2rem !important;
+    padding: 1.2rem 0.4rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+  }
+  .room-card {
+    max-width: 97vw;
+    min-height: 400px;
+    padding: 1rem 0.4rem;
+    margin: 0 auto;
+  }
+  .room-card img.room-img {
+    max-width: 100vw;
+    height: 135px;
   }
 }
 
-/* Ajustement carte pour profiter de la largeur */
-.room-card {
-  width: 100%;       /* Remplit toute la cellule */
-  max-width: none;   /* On enlève l’ancienne limite */
+/* ===== BOUTONS GRANDS ET UNIFORMES ===== */
+.btn-reserver,
+#contact button[type="submit"],
+#reservation .btn-inline {
+  width: 90%;
+  display: block;
+  margin: 1rem auto 0 auto;
+  font-size: 1.07rem;
+  padding: 0.85rem 0;
+  min-width: 120px;
+  border-radius: 1.3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  color: #fff;
+  box-shadow: 0 2px 18px rgba(20,35,60,0.11);
+  letter-spacing: 0.03em;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  text-align: center;
+  border: none;
+  cursor: pointer;
 }
-/* ===== CONTACT ===== */
+.btn-reserver:hover,
+#contact button[type="submit"]:hover,
+.btn-reserver:focus,
+#contact button[type="submit"]:focus {
+  background: var(--color-hover);
+  color: var(--color-primary);
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* ===== CONTACT PAGE ===== */
 @media (max-width: 48rem) {
   #contact {
     margin: 1rem;
     padding: 1.5rem;
   }
-
   #contact button[type="submit"] {
-    width: 100%;
+    width: 90%;
+    margin: 1.5rem auto 0 auto;
+    display: block;
     text-align: center;
   }
-}
-
-@media (max-width: 48rem) {
   .map-wrapper {
     height: 200px;
   }
 }
+
+/* ===== CÉLÉBRITÉS (petite adaptation mobile) ===== */
+@media (max-width: 700px) {
+  #celebrities {
+    padding: 0.8rem 0;
+  }
+  #celeb-list {
+    gap: 1.1rem;
+  }
+  .celeb-card {
+    max-width: 98vw;
+    padding: 1.1rem 0.5rem;
+    min-height: 260px;
+  }
+  .celeb-photo {
+    width: 100px;
+    height: 100px;
+  }
+  #celebrities > h2 {
+    font-size: 1.3rem;
+    padding: 0.3em 0.7em;
+  }
+}
+
+/* ===== BODY GLOBAL ===== */
+body {
+  overflow-x: hidden;
+}
+/* ===== RESPONSIVE - Reservation et Intro ===== */
+
+@media (max-width: 1150px) {
+  #reservation form {
+    grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  }
+}
+
+@media (max-width: 950px) {
+  #reservation form {
+    grid-template-columns: 1fr 1fr 1fr auto;
+  }
+}
+@media (max-width: 750px) {
+  #reservation {
+    padding: 1rem;
+  }
+  #reservation form {
+    grid-template-columns: 1fr 1fr auto;
+    gap: 0.7rem;
+  }
+  #intro {
+    top: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  #reservation {
+    position: static;
+    width: 96vw;
+    left: 0;
+    transform: none;
+    margin: 1.5rem auto;
+    z-index: 1;
+    border-radius: 1rem;
+  }
+  #reservation form {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  #reservation .btn-inline {
+    width: 100%;
+    min-width: 0;
+    font-size: 1rem;
+    padding: 0.95rem 0;
+    margin: 0.4rem 0 0 0;
+    justify-self: center;
+  }
+  #intro h1 {
+    font-size: 1.5rem;
+    padding: 0.4rem;
+  }
+}
+@media (max-width: 600px) {
+  #intro {
+    width: 100vw;
+    min-width: 0;
+    max-width: 100vw;
+    margin: 0 0 1rem 0;
+    padding: 1.2rem 0.7rem 0.7rem 0.7rem; /* padding horizontal identique */
+    background: rgba(20, 40, 80, 0.33);
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centre horizontalement tout le contenu */
+    justify-content: flex-start;
+    text-align: center;
+    box-sizing: border-box;
+    position: static !important;
+    left: unset !important;
+    right: unset !important;
+    z-index: 40;
+    overflow: visible !important;
+  }
+  #intro h1 {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 2.15rem;
+    line-height: 1.22;
+    color: #fff;
+    text-shadow: 0 0 8px #142850cc, 0 1px 10px #21447577;
+    font-family: var(--font-accent, serif);
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.01em;
+    text-align: center;
+    word-break: break-word;
+    white-space: normal;
+    display: block;
+  }
+    body.home #intro {
+    /* Annule le translateX hérité */
+    transform: none !important;
+    /* Centre horizontalement le bloc */
+    margin: 1rem auto 1rem auto !important;
+    /* Pas besoin de toucher au display:flex ni au text-align */
+  }
+}
+
+
