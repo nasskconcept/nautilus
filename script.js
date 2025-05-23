@@ -34,15 +34,24 @@ document.addEventListener("DOMContentLoaded", () => {
     </article>
   `;
 
-  const createMenuItem = (item) => `
+  // ==== PLACE BIEN CE BLOC ICI, AU DESSUS DE TA BOUCLE ["Petit Déjeuner", ...] ====
+  const createMenuItem = (item) => {
+    // Si c'est la formule Petit Déjeuner, on n'affiche pas la catégorie en petit
+    const labelCat =
+      item.category === "Petit Déjeuner"
+        ? ""
+        : ` <small>${item.category}</small>`;
+
+    return `
     <article class="menu-item">
       <img src="${item.image}" alt="${item.name}">
       <div class="menu-info">
-        <h4>${item.name} <small>${item.category}</small></h4>
+        <h4>${item.name}${labelCat}</h4>
         <p>${item.description}</p>
         <strong>€${item.price.toFixed(2)}</strong>
       </div>
     </article>`;
+  };
 
   // === CHAMBRES ===
   const roomsContainer = document.querySelector("#rooms");
@@ -79,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
       .then((menus) => {
         menuContainer.innerHTML = "";
-        ["Entrée", "Plat", "Dessert"].forEach((cat) => {
+        ["Petit Déjeuner", "Entrée", "Plat", "Dessert"].forEach((cat) => {
           const section = document.createElement("section");
           section.classList.add("menu-section");
           section.innerHTML = `<h2>${cat}</h2>`;
@@ -341,5 +350,26 @@ document.addEventListener("DOMContentLoaded", () => {
     modalThankyou.addEventListener("click", (e) => {
       if (e.target === modalThankyou) modalThankyou.classList.remove("active");
     });
+  }
+
+  // === MODE SOMBRE / CLAIR ===
+  const toggleBtn = document.getElementById("toggle-theme");
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark-mode") ? "dark" : "light"
+      );
+
+      // Animation de rotation (facultatif)
+      toggleBtn.classList.add("rotate");
+      setTimeout(() => toggleBtn.classList.remove("rotate"), 600);
+    });
+  }
+
+  // Appliquer le thème sauvegardé au chargement
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
   }
 });

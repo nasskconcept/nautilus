@@ -54,5 +54,12 @@
     "description": "Sphère de coco givrée, coulis de fruit de la passion.",
     "price": 13,
     "image": "assets/menu/dessert.jpg"
-  }
+  },
+  {
+  "name": "Formule Petit Déjeuner",
+  "category": "Petit Déjeuner",
+  "description": "Boisson chaude, jus d’orange frais, viennoiseries et tartines beurrées.",
+  "price": 9.90,
+  "image": "assets/menu/petitDej.jpg"
+}
 ]
