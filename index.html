@@ -111,5 +111,27 @@
 </footer>
 
     <script src="script.js"></script>
+<!-- Bouton d’aide IA -->
+<div id="ai-helper">
+  <button id="ai-helper-btn" aria-label="Aide IA">
+    <!-- SVG bouée de sauvetage -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="28" height="28" fill="currentColor">
+      <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="4" fill="none"/>
+      <circle cx="32" cy="32" r="14" fill="none" stroke="currentColor" stroke-width="4"/>
+      <path d="M32 4v12M32 48v12M4 32h12M48 32h12M11.3 11.3l8.5 8.5M44.2 44.2l8.5 8.5M11.3 52.7l8.5-8.5M44.2 19.8l8.5-8.5" stroke="currentColor" stroke-width="4"/>
+    </svg>
+  </button>
+  <div id="ai-helper-modal" class="hidden" >
+    <div class="ai-helper-header">
+      <span>Assistant Nautilus</span>
+      <button id="ai-helper-close" aria-label="Fermer">×</button>
+    </div>
+    <div class="ai-helper-body">
+      <p>Salut ! Besoin d’un coup de main ? Je suis là pour t’aider 😊</p>
+      <!-- Ici tu peux ajouter des liens, FAQ, ou faux chat -->
+    </div>
+  </div>
+</div>
+
   </body>
 </html>

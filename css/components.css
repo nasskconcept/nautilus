@@ -211,3 +211,87 @@ body.dark-mode button:hover {
   transform: rotate(360deg);
 }
 
+/* Masqué par défaut */
+.hidden {
+  display: none;
+}
+
+/* Conteneur & bouton IA */
+#ai-helper {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 10000;
+}
+#ai-helper-btn {
+  background: var(--color-secondary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+#ai-helper-btn:hover {
+  transform: scale(1.1);
+}
+
+/* === Bulle BD pour l’aide IA === */
+#ai-helper-modal {
+ 
+  position: absolute;
+  bottom: 4.5rem;
+  right: 0;
+  width: 18rem;
+  background: #fff;
+  color: #333;
+  border: 3px solid #204060;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  padding: 0;
+  z-index: 10001;
+  overflow: visible; /* pour la flèche */
+}
+
+/* Flèche interne (blanc) */
+#ai-helper-modal::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  right: 1.5rem;
+  border-width: 1rem 1rem 0 1rem;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+/* Flèche bordure */
+#ai-helper-modal::before {
+  content: "";
+  position: absolute;
+  bottom: -1.15rem;
+  right: 1.5rem;
+  border-width: 1.15rem 1.15rem 0 1.15rem;
+  border-style: solid;
+  border-color: #204060 transparent transparent transparent;
+}
+
+/* En-tête et corps de la bulle */
+.ai-helper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #204060;
+  color: white;
+  padding: 0.5rem;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+}
+.ai-helper-body {
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}

@@ -372,4 +372,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
   }
+  // === AIDE IA FICTIVE ===
+  const aiBtn = document.getElementById("ai-helper-btn");
+  const aiModal = document.getElementById("ai-helper-modal");
+  const aiClose = document.getElementById("ai-helper-close");
+
+  if (aiBtn && aiModal && aiClose) {
+    aiBtn.addEventListener("click", () => {
+      aiModal.classList.toggle("hidden");
+    });
+
+    aiClose.addEventListener("click", () => {
+      aiModal.classList.add("hidden");
+    });
+  }
 });
